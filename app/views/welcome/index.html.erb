@@ -1,0 +1,24 @@
+<h1>Script Upload Engine</h1>
+
+<%= form_tag("ezlynx_api", :method=>'post', :multipart => true) do %>
+ <p>
+   Script Name:<br />
+   <%= text_field_tag "Script" %>
+ </p>
+ <p>
+   LOB: <br />
+   <%= select_tag("LOB", options_for_select([['Auto', '1'],
+                 ['Home', '2']], '1')) %>
+ </p>
+ <p>
+   Describe your problem:<br />
+   <%= text_area_tag "description", "", :size=>"30x2" %>
+ </p>
+ <p>
+   Script attachment:<br />
+   <%= file_field_tag "attachment" %>
+ </p>
+ <p>
+   <%= submit_tag 'Submit' %>
+ </p>
+<% end %>
